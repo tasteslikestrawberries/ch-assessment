@@ -3,8 +3,8 @@ import Dropdown from "./components/dropdown/Dropdown";
 import { mockData } from "./components/dropdown/mock-data";
 
 function App() {
-  const test = () => {
-    console.log("test");
+  const test = (option) => {
+    console.log(option);
   };
 
   return (

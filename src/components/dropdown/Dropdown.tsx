@@ -8,10 +8,6 @@ import {
 import ClickOutsideWrapper from "../../custom-hooks/useClickOutside";
 import {
   BsCheckSquare,
-  BsDashCircle,
-  BsXCircle,
-  BsPlusCircle,
-  BsSquare,
   BsPlusCircleFill,
   BsXCircleFill,
   BsDashCircleFill,
@@ -26,7 +22,7 @@ interface IDropdownData {
 }
 interface IDropdownProps {
   data: IDropdownData[];
-  onOptionSelected?: () => void;
+  onOptionSelected?: (option: IDropdownData) => void;
 }
 
 const Dropdown: FC<IDropdownProps> = ({ data, onOptionSelected }) => {
@@ -41,7 +37,7 @@ const Dropdown: FC<IDropdownProps> = ({ data, onOptionSelected }) => {
     }
     setSelectedOption(option);
     setIsOpen(false);
-    onOptionSelected();
+    onOptionSelected(option);
   };
 
   const removeOption = (ev: React.MouseEvent) => {
