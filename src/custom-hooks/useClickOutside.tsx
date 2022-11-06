@@ -1,4 +1,8 @@
 import { useRef, useEffect, FC } from "react";
+interface IClickOutsideWrapperProps {
+  handleClickOutside: () => void;
+  children: React.ReactNode;
+}
 
 const useClickOutside = (
   ref: React.MutableRefObject<HTMLElement>,
@@ -16,11 +20,6 @@ const useClickOutside = (
     };
   }, [ref]);
 };
-
-interface IClickOutsideWrapperProps {
-  handleClickOutside: () => void;
-  children: React.ReactNode;
-}
 
 const ClickOutsideWrapper: FC<IClickOutsideWrapperProps> = ({
   handleClickOutside,
